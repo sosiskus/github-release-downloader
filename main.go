@@ -65,7 +65,6 @@ func DownloadResource(id float64, c chan int) {
 
 func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []string) {
 
-	// fmt.Printf("repo: %s, tag: %s, token: %s", repo, tag, token)
 	repo = repo1
 	tag = tag1
 	token = token1

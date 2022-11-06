@@ -63,7 +63,7 @@ func DownloadResource(id float64, c chan int) {
 	f.Close()
 }
 
-func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []string) {
+func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []string) []interface{} {
 
 	repo = repo1
 	tag = tag1
@@ -134,6 +134,8 @@ func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []stri
 	// for i := 0; i < len(results); i++ {
 	// 	<-c
 	// }
+
+	return results
 
 }
 

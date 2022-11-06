@@ -125,16 +125,6 @@ func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []stri
 
 	}
 
-	// // Download results - parallel downloading, use channel to syncronize
-	// c := make(chan int)
-	// for _, res := range results {
-	// 	go downloadResource(res.(float64), c)
-	// }
-	// // wait for downloads end
-	// for i := 0; i < len(results); i++ {
-	// 	<-c
-	// }
-
 	return results
 
 }

@@ -65,6 +65,7 @@ func DownloadResource(id float64, c chan int) {
 
 func DownloadReleaseFiles(repo string, tag string, token string, files []string) {
 
+	fmt.Printf("repo: %s, tag: %s, token: %s", repo, tag, token)
 	// repo = "FoViBalT/FoVIBalT-Led-Controller"
 	// tag = "latest-dev"
 	// token = ""

@@ -63,12 +63,13 @@ func DownloadResource(id float64, c chan int) {
 	f.Close()
 }
 
-// Download all assets from given tag
-// repo is the repo name (ex: metal3d/git-downloader)
-// tag is the tag name (ex: v1.0.0)
-// token is the github token (ex: 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)
-// files is the list of files to download (ex: ["firmware.bin", "uploader"])
-func DownloadReleaseFiles(repo string, tag string, token string, files []string) []interface{} {
+func DownloadReleaseFiles(repo string, tag string, token string, files []string) {
+
+	// repo = "FoViBalT/FoVIBalT-Led-Controller"
+	// tag = "latest-dev"
+	// token = ""
+	// filesToDownload := make([]string, 0)
+	// filesToDownload = append(filesToDownload, "firmware.bin", "uploader")
 
 	if len(repo) == 0 {
 		log.Fatal("No repository provided")
@@ -124,7 +125,7 @@ func DownloadReleaseFiles(repo string, tag string, token string, files []string)
 
 	}
 
-	// Download results - parallel downloading, use channel to syncronize
+	// // Download results - parallel downloading, use channel to syncronize
 	// c := make(chan int)
 	// for _, res := range results {
 	// 	go downloadResource(res.(float64), c)
@@ -134,7 +135,6 @@ func DownloadReleaseFiles(repo string, tag string, token string, files []string)
 	// 	<-c
 	// }
 
-	return results
 }
 
 func contains(s []string, str string) bool {

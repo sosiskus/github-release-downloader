@@ -23,7 +23,7 @@ func prepareRequest(url string) *http.Request {
 }
 
 // Download resource from given url, write 1 in chan when finished
-func downloadResource(id float64, c chan int) {
+func DownloadResource(id float64, c chan int) {
 	defer func() { c <- 1 }()
 	url := fmt.Sprintf("https://api.github.com/repos/%s/releases/assets/%.0f", repo, id)
 	fmt.Printf("Start: %s\n", url)
@@ -68,7 +68,7 @@ func downloadResource(id float64, c chan int) {
 // tag is the tag name (ex: v1.0.0)
 // token is the github token (ex: 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)
 // files is the list of files to download (ex: ["firmware.bin", "uploader"])
-func downloadReleaseFiles(repo string, tag string, token string, files []string) []interface{} {
+func DownloadReleaseFiles(repo string, tag string, token string, files []string) []interface{} {
 
 	if len(repo) == 0 {
 		log.Fatal("No repository provided")

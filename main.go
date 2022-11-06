@@ -63,13 +63,12 @@ func DownloadResource(id float64, c chan int) {
 	f.Close()
 }
 
-func DownloadReleaseFiles(repo string, tag string, token string, files []string) {
+func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []string) {
 
-	fmt.Printf("repo: %s, tag: %s, token: %s", repo, tag, token)
-	// repo = "FoViBalT/FoVIBalT-Led-Controller"
-	// tag = "latest-dev"
-
-	// token = ""
+	// fmt.Printf("repo: %s, tag: %s, token: %s", repo, tag, token)
+	repo = repo1
+	tag = tag1
+	token = token1
 	// filesToDownload := make([]string, 0)
 	// filesToDownload = append(filesToDownload, "firmware.bin", "uploader")
 

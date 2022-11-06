@@ -23,7 +23,7 @@ func prepareRequest(url string) *http.Request {
 }
 
 // Download resource from given url, write 1 in chan when finished
-func DownloadResource(id float64, c chan int) {
+func DownloadResource(id float64, c chan int, destFolder string) {
 	defer func() { c <- 1 }()
 	url := fmt.Sprintf("https://api.github.com/repos/%s/releases/assets/%.0f", repo, id)
 	fmt.Printf("Start: %s\n", url)
@@ -47,7 +47,7 @@ func DownloadResource(id float64, c chan int) {
 
 	disp = matches[0][1]
 
-	f, err := os.OpenFile(disp, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0664)
+	f, err := os.OpenFile(destFolder+"/"+disp, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0664)
 	if err != nil {
 		log.Fatal(err)
 	}

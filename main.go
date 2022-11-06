@@ -68,8 +68,6 @@ func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []stri
 	repo = repo1
 	tag = tag1
 	token = token1
-	// filesToDownload := make([]string, 0)
-	// filesToDownload = append(filesToDownload, "firmware.bin", "uploader")
 
 	if len(repo) == 0 {
 		log.Fatal("No repository provided")

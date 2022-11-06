@@ -124,7 +124,6 @@ func DownloadReleaseFiles(repo1 string, tag1 string, token1 string, files []stri
 	}
 
 	return results
-
 }
 
 func contains(s []string, str string) bool {
